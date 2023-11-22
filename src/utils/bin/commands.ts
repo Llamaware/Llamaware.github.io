@@ -30,8 +30,8 @@ export const repo = async (args: string[]): Promise<string> => {
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `Hi, we are ${config.name}. 
-Welcome to our website!
+  return `We are ${config.name}.
+Welcome to Llamaware.
 More about us:
 'sumfetch' - short summary.
 'resume' - our latest resume.
@@ -46,7 +46,7 @@ export const resume = async (args: string[]): Promise<string> => {
 // Donate
 export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 
-here are the ways you can support my work:
+here are the ways you can support our work:
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
 `;
