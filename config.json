@@ -1,0 +1,39 @@
+{
+  "readmeUrl": "https://github.com/Llamaware/IelmenDecryptor/blob/master/README.md",
+  "title": "Llamaware",
+  "name": "onehalf, iikare, basil, rph",
+  "ascii": "liveterm",
+  "social": {
+    "github": "Llamaware",
+    "linkedin": "null"
+  },
+  "email": "llam@llamawa.re",
+  "ps1_hostname": "llamaware",
+  "ps1_username": "llam",
+  "repo": "https://github.com/Llamaware/Llamaware.github.io",
+  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
+  "donate_urls": {
+    "paypal": "null",
+    "patreon": "null"
+  },
+  "colors": {
+    "light": {
+      "background": "#FDF6E3",
+      "foreground": "#586E75",
+      "yellow": "#B58900",
+      "green": "#859900",
+      "gray": "#6C71C4",
+      "blue": "#268BD2",
+      "red": "#DC322F"
+    },
+    "dark": {
+      "background": "#002B36",
+      "foreground": "#93A1A1",
+      "yellow": "#B58900",
+      "green": "#859900",
+      "gray": "#6C71C4",
+      "blue": "#268BD2",
+      "red": "#DC322F"
+    }
+  }
+}
