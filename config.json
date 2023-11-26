@@ -29,11 +29,11 @@
     "dark": {
       "background": "#000000",
       "foreground": "#93A1A1",
-      "yellow": "#B58900",
-      "green": "#859900",
+      "yellow": "#FFFFFF",
+      "green": "#FFFFFF",
       "gray": "#6C71C4",
-      "blue": "#268BD2",
-      "red": "#DC322F"
+      "blue": "#FFFFFF",
+      "red": "#FFFFFF"
     }
   }
 }
