@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Hack';
-  src: url(/assets/fonts/Hack-NF.ttf);
+  font-family: 'Nouveau IBM Stretch';
+  src: url(/assets/fonts/Nouveau_IBM_Stretch.ttf);
   display: swap;
 }
 
 * {
-  font-family: 'Hack', monospace;
+  font-family: 'Nouveau IBM Stretch', monospace;
 }
 
 html,
