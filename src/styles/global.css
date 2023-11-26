@@ -4,6 +4,7 @@
 
 @font-face {
   font-family: 'Nouveau IBM Stretch';
+  font-size: 20px;
   src: url(/assets/fonts/Nouveau_IBM_Stretch.ttf);
   display: swap;
 }
