@@ -27,7 +27,7 @@
       "red": "#DC322F"
     },
     "dark": {
-      "background": "#002B36",
+      "background": "#000000",
       "foreground": "#93A1A1",
       "yellow": "#B58900",
       "green": "#859900",
