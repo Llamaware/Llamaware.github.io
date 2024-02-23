@@ -2,8 +2,8 @@
 	"id": "multiplatform",
 	"name": "Multiplatform",
 	"authors": ["Basil"],
-	"description": "Allows the game to run on macOS and Linux",
-	"version": "1.0.1",
+	"description": "Compatibility mod to allow the game to run on macOS and Linux with full Steam support.",
+	"version": "1.0.2",
 	"files": {
 		"plugins": ["plugins/macosTrackpad.js"],
 		"inject": [
