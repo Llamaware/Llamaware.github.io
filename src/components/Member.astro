@@ -1,0 +1,30 @@
+---
+interface Props {
+	name: string;
+	image?: string;
+	href?: string;
+}
+
+const { href, name, image } = Astro.props;
+---
+
+{/* Not sure if there's a cleaner way to do this, you can't seem to use JSX in the above section. */}
+
+{href ? (
+	<a href={href}>
+		{image
+			? <img
+				src={`/buttons/${image}`}
+				title={name}
+				alt={`${name}'s button`}
+			/> : name
+		}
+	</a>
+) : (
+	image
+		? <img
+			src={`/buttons/${image}`}
+			title={name}
+			alt={`${name}'s button`}
+		/> : name
+)}

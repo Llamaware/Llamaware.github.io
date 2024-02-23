@@ -1,41 +1,98 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Link from '../components/Link.astro';
+import Member from '../components/Member.astro';
 ---
 
-<Layout title='Welcome to LlamaWare'>
-	<main>
-		<section>
-			<p>Looking to download TCoAaL mods? Do so here!</p>
-			<a class='mods' href='/mods'>Browse Mods</a>
-		</section>
+<Layout title='Welcome to Llamaware'>
+	<!-- Yes, yes, I don't *technically* need a div and I can put a class on <Layout>, but this is quick and easy and doesn't steal your grill and cook up a banquet out of spite. -->
+	<div class='main'>
+		<main>
+			<p>A group of like-minded programmers, modders, and tinkerers. We make game mods and modding tools, primarily around <a href='https://store.steampowered.com/app/2378900'>The Coffin of Andy and Leyley</a> and <a href='https://store.steampowered.com/app/1256670'>Library of Ruina</a>.</p>
 
-		<section>
-			<h2>Members</h2>
-			<ul>
-				<li><a href='https://github.com/KawaiiFiveO'>Onehalf</a></li>
-				<li><a href='https://github.com/iikare'>iikare</a></li>
-				<li><a href='https://basil.cafe'>Basil</a></li>
-				<li><a href='https://github.com/rphsoftware'>Rph</a></li>
-			</ul>
-		</section>
+			<p>Looking to download TCoAaL mods? Look no further!</p>
+			<Link href='/mods' icon='package'>Explore Mods</Link>
 
-		<img class='underconstruction' src='/underconstruction.gif' alt='This website is under construction!' />
-	</main>
+			<img class='underconstruction' src='/underconstruction.gif' alt='This website is under construction!' />
+		</main>
+
+		<aside>
+			<section>
+				<h2>Members</h2>
+				<div>
+					<ul>
+						<li><Member name='Onehalf' image='alife.gif' /></li>
+						<li><Member name='Basil' image='basil.gif' href='https://basil.cafe' /></li>
+						<li><Member name='Thefonze7' image='fonze.webp' href='https://codeberg.org/Thefonze7' /></li>
+						<li><Member name='iikare' href='https://github.com/iikare' /></li>
+						<li><Member name='Rph' href='https://github.com/rphsoftware' /></li>
+						<li><Member name='wonderfullymemorable' href='https://codeberg.org/succinctclinical/' /></li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>Our Projects</h2>
+				<div>
+					<ul>
+						<li><a href='https://github.com/Llamaware/IelmenDecryptor'>IelmenDecryptor</a></li>
+						<li><a href='/mods'>TCoAaL Mod Depository</a></li>
+						<li><a href='https://github.com/Llamaware/Llamaware.github.io'>This site</a></li>
+					</ul>
+				</div>
+			</section>
+		</aside>
+	</div>
 </Layout>
 
-<style>
-	.mods {
-		padding: 4px 12px;
+<style lang='scss'>
+	$asideWidth: 240px;
 
-		font-size: 1.25rem;
-		font-weight: 600;
-		text-decoration: none;
-		color: black;
-		background-color: var(--accent);
+	.main {
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+
+		> main { flex: 1; }
+	}
+
+	aside { width: $asideWidth; }
+
+	@media (max-width: 800px) {
+		.main { flex-direction: column; }
+
+		aside {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+
+			width: unset;
+
+			> * { width: $asideWidth; }
+		}
+	}
+
+	section {
+		h2 {
+			margin-bottom: 4px;
+			font-weight: 600;
+			font-size: 1rem;
+			text-align: center;
+		}
+
+		> div {
+			background-color: var(--bg);
+			border: 1px solid var(--accent);
+		}
+	}
+
+	ul {
+		list-style-image: url(/silk/bullet_go.png);
 	}
 
 	img.underconstruction {
 		display: block;
 		margin: auto;
+		margin-top: 48px;
 	}
 </style>

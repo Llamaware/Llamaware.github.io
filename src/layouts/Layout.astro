@@ -1,4 +1,6 @@
 ---
+import Icon from '../components/Icon.astro';
+
 interface Props {
 	title: string;
 }
@@ -10,22 +12,27 @@ const { title } = Astro.props;
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='description' content='Astro description' />
+		<meta name='description' content='Welcome to Llamaware.' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<a href='/'>
+		<a href='/' class='header'>
 			<img src='/favicon.svg' alt='' />
 			<h1>
-				Llama<span class='ware'>Ware</span>
+				Llama<span class='ware'>ware</span>
 			</h1>
 		</a>
 		<h2 class='subheading'>"Weaving magical software for the information age."</h2>
-	
-		<hr />
+
+		<nav>
+			<a href='/mods'><Icon icon='package' /> TCoAaL Mods</a>
+			<a href='https://github.com/Llamaware'><Icon icon='script_code' /> GitHub</a>
+			<a href='https://discord.gg/SKtgz9KvzE'><Icon icon='connect' /> Discord</a>
+			<a href='llam@llamawa.re'><Icon icon='email' /> E-Mail</a>
+		</nav>
 	
 		<slot />
 	</body>
@@ -40,16 +47,20 @@ const { title } = Astro.props;
 		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IArs4c6QAAACFJREFUGFdj/Nqn8J+76AEjAxrAEIDJEyeBbCxxOpDtBwA34AgHQxEy0gAAAABJRU5ErkJggg==) repeat, var(--bg);
 		image-rendering: pixelated;
 	}
-	body { image-rendering: unset !important; }
+	body {
+		image-rendering: unset !important;
+		padding-bottom: 80px;
+	}
 
-	a {
+	a.header {
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		gap: 12px;
 
+		width: fit-content;
+		margin: auto;
 		margin-top: 32px;
-		margin-bottom: 8px;
+		margin-bottom: 4px;
 
 		text-decoration: none;
 		color: var(--text);
@@ -58,18 +69,18 @@ const { title } = Astro.props;
 			display: block;
 			height: 3rem;
 		}
-	}
 
-	h1 {
-		margin: 0;
+		h1 {
+			margin: 0;
 
-		font-size: 3rem;
-		font-style: italic;
-		text-align: center;
-		text-shadow: 2px 2px #9c4e07;
+			font-size: 3rem;
+			font-style: italic;
+			text-align: center;
+			text-shadow: 2px 2px #9c4e07;
 
-		> .ware {
-			color: var(--accent);
+			> .ware {
+				color: var(--accent);
+			}
 		}
 	}
 
@@ -86,6 +97,35 @@ const { title } = Astro.props;
 		border: 0;
 		border-bottom: 1px solid var(--accent);
 		margin: 24px 0px;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+
+		border: 1px solid var(--accent);
+		border-top: 0;
+		margin-top: 24px;
+		margin-bottom: 24px;
+		font-size: 0.875rem;
+		background-color: var(--bg);
+
+		> a {
+			display: flex;
+			gap: 6px;
+			justify-content: center;
+
+			flex: 1;
+			padding: 4px 8px;
+
+			border-top: 1px solid var(--accent);
+			
+			text-align: center;
+
+			&:not(:last-child) {
+				border-right: 1px solid var(--accent);
+			}
+		}
 	}
 </style>
 
@@ -106,5 +146,10 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+
+	a[href] {
+		color: var(--text);
+		font-weight: 600;
 	}
 </style>

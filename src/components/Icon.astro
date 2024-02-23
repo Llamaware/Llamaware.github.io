@@ -1,0 +1,15 @@
+---
+interface Props {
+	icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<img src={`/silk/${icon}.png`} alt='' />
+
+<style>
+	img {
+		height: max-content;
+	}
+</style>
