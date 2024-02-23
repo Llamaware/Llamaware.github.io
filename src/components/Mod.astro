@@ -1,0 +1,65 @@
+---
+import type { Mod } from '../lib/getMods';
+import Link from './Link.astro';
+
+interface Props {
+	mod: Mod;
+}
+
+const { name, authors, id, description, folder, version } = Astro.props.mod;
+---
+
+<article class='mod'>
+	<h1>{name} <span class='version'>{version}</span></h1>
+	<h2>{authors.join(', ')}</h2>
+
+	<p>{description}</p>
+
+
+	<div class='links'>
+		<Link href={`/mod/${id}.zip?${Date.now()}`} icon='disk'>Download</Link>
+		<Link
+			href={`https://github.com/Llamaware/Llamaware.github.io/tree/main/mods/${folder}`}
+			icon='eye'
+		>
+			View Source
+		</Link>
+	</div>
+</article>
+
+<style lang='scss'>
+	.mod {
+		padding: 8px;
+		border: 1px solid var(--accent);
+		background-color: var(--bg);
+		box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+
+		max-width: 500px;
+		width: 100%;
+
+		h1, h2 {
+			margin: 0;
+		}
+		
+		h1 {
+			font-size: 1.25rem;
+		}
+
+		h2 {
+			font-size: 1rem;
+			font-weight: 500;
+		}
+
+		.version {
+			font-size: 0.75rem;
+			font-weight: 500;
+			color: rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	.links {
+		display: flex;
+		flex-direction: row;
+		gap: 4px;
+	}
+</style>

@@ -1,0 +1,10 @@
+{
+	"id": "voiceacting",
+	"name": "Voice Acting",
+	"authors": ["Basil"],
+	"description": "Play sound files during dialogues.",
+	"version": "0.1.1",
+	"files": {
+		"plugins": ["index.js"]
+	}
+}

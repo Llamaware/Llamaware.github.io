@@ -1,0 +1,17 @@
+{
+	"id": "mybrothe",
+	"name": "My Brothe",
+	"authors": [
+		"Basil"
+	],
+	"description": "A recreation of Jazz Emu's My Brothe.",
+	"version": "1.0.0",
+	"files": {
+		"assets": [
+			"audio/bgm/brothe.ogg"
+		],
+		"dataDeltas": [
+			"data/Map004.jsond"
+		]
+	}
+}

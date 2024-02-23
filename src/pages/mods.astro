@@ -1,0 +1,29 @@
+---
+import Mod from '../components/Mod.astro';
+import Layout from '../layouts/Layout.astro';
+import getMods from '../lib/getMods';
+
+const mods = getMods();
+---
+
+<Layout title='Llamaware Mod Depository'>
+	<main>
+		<section>
+			<h2>Mods</h2>
+
+			<div class='modList'>
+				{mods.map(mod => <Mod mod={mod} />)}
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style lang='scss'>
+	.modList {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+</style>

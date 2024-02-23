@@ -1,0 +1,110 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta name='description' content='Astro description' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<a href='/'>
+			<img src='/favicon.svg' alt='' />
+			<h1>
+				Llama<span class='ware'>Ware</span>
+			</h1>
+		</a>
+		<h2 class='subheading'>"Weaving magical software for the information age."</h2>
+	
+		<hr />
+	
+		<slot />
+	</body>
+</html>
+
+<style lang='scss'>
+	html {
+		font-family: Arial, Helvetica, sans-serif;
+		color: var(--text);
+
+		/* http://www.patternify.com */
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IArs4c6QAAACFJREFUGFdj/Nqn8J+76AEjAxrAEIDJEyeBbCxxOpDtBwA34AgHQxEy0gAAAABJRU5ErkJggg==) repeat, var(--bg);
+		image-rendering: pixelated;
+	}
+	body { image-rendering: unset !important; }
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+
+		margin-top: 32px;
+		margin-bottom: 8px;
+
+		text-decoration: none;
+		color: var(--text);
+
+		img {
+			display: block;
+			height: 3rem;
+		}
+	}
+
+	h1 {
+		margin: 0;
+
+		font-size: 3rem;
+		font-style: italic;
+		text-align: center;
+		text-shadow: 2px 2px #9c4e07;
+
+		> .ware {
+			color: var(--accent);
+		}
+	}
+
+	h2.subheading {
+		margin-top: 0;
+
+		font-size: 1rem;
+		font-weight: normal;
+		text-align: center;
+		color: rgba(0, 0, 0, 0.75);
+	}
+
+	hr {
+		border: 0;
+		border-bottom: 1px solid var(--accent);
+		margin: 24px 0px;
+	}
+</style>
+
+<style is:global>
+	:root {
+		--accent: #e7933e;
+		--bg: #fdc66d;
+		--text: #221706;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

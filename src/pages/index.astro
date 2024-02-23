@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Welcome to LlamaWare'>
+	<main>
+		<section>
+			<p>Looking to download TCoAaL mods? Do so here!</p>
+			<a class='mods' href='/mods'>Browse Mods</a>
+		</section>
+
+		<section>
+			<h2>Members</h2>
+			<ul>
+				<li><a href='https://github.com/KawaiiFiveO'>Onehalf</a></li>
+				<li><a href='https://github.com/iikare'>iikare</a></li>
+				<li><a href='https://basil.cafe'>Basil</a></li>
+				<li><a href='https://github.com/rphsoftware'>Rph</a></li>
+			</ul>
+		</section>
+
+		<img class='underconstruction' src='/underconstruction.gif' alt='This website is under construction!' />
+	</main>
+</Layout>
+
+<style>
+	.mods {
+		padding: 4px 12px;
+
+		font-size: 1.25rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: black;
+		background-color: var(--accent);
+	}
+
+	img.underconstruction {
+		display: block;
+		margin: auto;
+	}
+</style>

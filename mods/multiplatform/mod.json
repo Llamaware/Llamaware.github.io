@@ -1,0 +1,25 @@
+{
+	"id": "multiplatform",
+	"name": "Multiplatform",
+	"authors": ["Basil"],
+	"description": "Allows the game to run on macOS and Linux",
+	"version": "1.0.1",
+	"files": {
+		"plugins": ["plugins/macosTrackpad.js"],
+		"inject": [
+			{
+				"file": "inject/checks.js",
+				"at": "tombPostModParse"
+			},
+
+			{
+				"file": "inject/appData.js",
+				"at": "tombPostPluginInject"
+			},
+			{
+				"file": "inject/greenworks.js",
+				"at": "tombPostPluginInject"
+			}
+		]
+	}
+}
