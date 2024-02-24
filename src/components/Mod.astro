@@ -10,11 +10,12 @@ const { name, authors, id, description, folder, version } = Astro.props.mod;
 ---
 
 <article class='mod'>
-	<h1>{name} <span class='version'>{version}</span></h1>
-	<h2>{authors.join(', ')}</h2>
+	<div>
+		<h1>{name} <span class='version'>{version}</span></h1>
+		<h2>{authors.join(', ')}</h2>
 
-	<p>{description}</p>
-
+		<p>{description}</p>
+	</div>
 
 	<div class='links'>
 		<Link href={`/mod/${id}.zip?${Date.now()}`} icon='disk'>Download</Link>
@@ -29,6 +30,10 @@ const { name, authors, id, description, folder, version } = Astro.props.mod;
 
 <style lang='scss'>
 	.mod {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
 		padding: 8px;
 		border: 1px solid var(--accent);
 		background-color: var(--bg);
