@@ -1,0 +1,113 @@
+@use 'sass:color';
+
+@font-face {
+	font-family: 'DSEG7';
+	src: url('/fonts/DSEG7ClassicMini-Regular.woff2') format('woff2');
+}
+
+.player {
+	position: fixed;
+	bottom: 0; right: 40px;
+
+	display: flex;
+	gap: 8px;
+
+	width: 400px;
+
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding: 8px;
+	border: 1px solid hsl(18, 90%, 45%);
+
+	background: linear-gradient(hsl(44, 100%, 50%), hsl(24, 94%, 47%));
+
+	.playerControls {
+		display: flex;
+		gap: 4px;
+		align-items: center;
+
+		button {
+			font: inherit;
+			background: unset;
+			border: unset;
+			cursor: pointer;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			--size: 22px;
+			--font: 14px;
+
+			height: var(--size); width: var(--size);
+			// Yes, yes, cardinal sin, but these are meant as icons, not readable text, so I think it slides
+			font-size: var(--font);
+			line-height: var(--font);
+
+			border-radius: 999px;
+			border: 1px solid hsl(42, 70%, 28%);
+			box-shadow: 0 2px 2px rgb(72 64 43 / 50%);
+			background: linear-gradient(hsl(23, 100%, 97%) 50%, hsl(24, 31%, 68%) 50%, hsl(23, 100%, 97%) 90%);
+
+			&:hover, &:focus-visible { filter: brightness(90%); }
+			&:active { filter: brightness(75%); }
+
+			&.playerBigButton {
+				--size: 32px;
+				--font: 24px;
+			}
+		}
+	}
+
+	.playerMiddle {
+		flex: 1;
+
+		height: min-content;
+
+		.playerSongTitle {
+			display: block;
+
+			padding: 2px 6px;
+			border-radius: 4px;
+
+			font-size: 0.875rem;
+			line-height: 1.2;
+			text-wrap: nowrap;
+			color: hsl(26, 18%, 36%);
+			background-color: hsl(23, 100%, 97%);
+			box-shadow: 0px 0px 4px rgb(0 0 0 / 71%) inset;
+		}
+
+		.playerSoftware {
+			font-size: 0.75rem;
+			color: #a9471c;
+		}
+	}
+
+	.playerProgress {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-family: 'DSEG7', Arial, Helvetica, sans-serif;
+
+		color: rgb(15, 195, 15);
+		background-color: black;
+		padding: 2px 6px;
+		border-radius: 4px;
+		vertical-align: middle;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+
+			position: absolute;
+			inset: 0;
+
+			background: linear-gradient(transparent, rgba(255, 255, 255, 0.4) 50%, transparent 50%);
+			pointer-events: none;
+		}
+	}
+}
