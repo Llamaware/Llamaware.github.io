@@ -1,0 +1,14 @@
+{
+    "id": "san_analogmove",
+    "name": "SAN_AnalogMove",
+    "authors": [
+        "Sanshiro"
+    ],
+    "description": "Changes party character movement to dot movement that does not depend on tiles.",
+    "version": "1.0.0",
+    "files": {
+        "plugins": [
+            "plugins/SAN_AnalogMove.js"
+        ]
+    }
+}
