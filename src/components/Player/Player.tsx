@@ -5,6 +5,7 @@ import './theme.scss';
 const songList = [
 	{ title: 'Necros - Point of Departure', file: '/music/Necros - Point of Departure.webm' },
 	{ title: 'Jugi - Onward Ride', file: '/music/Jugi - Onward Ride.webm' },
+	{ title: 'Heartmeat of Carillon - Hoffipolkka', file: '/music/Heartmeat of Carillon - Hoffipolkka.webm' },
 ];
 
 function formatPosition(seconds: number) {
