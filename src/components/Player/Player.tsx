@@ -5,7 +5,9 @@ import './theme.scss';
 const songList = [
 	{ title: 'Necros - Point of Departure', file: '/music/Necros - Point of Departure.webm' },
 	{ title: 'Jugi - Onward Ride', file: '/music/Jugi - Onward Ride.webm' },
-	{ title: 'Heartmeat of Carillon - Hoffipolkka', file: '/music/Heartmeat of Carillon - Hoffipolkka.webm' },
+	{ title: 'Heartmeat of Carillon - Hoffipolkka', file: '/music/Heartmeat of Carillon - Hoffipolkka.mp3' },
+	{ title: 'Kris Hatlelid - The Duel - Test Drive II', file: '/music/Kris Hatlelid - The Duel - Test Drive II.mp3' },
+	{ title: 'ZUN - Bad Apple!!', file: '/music/ZUN - Bad Apple!!.mp3' },
 ];
 
 function formatPosition(seconds: number) {
