@@ -34,6 +34,12 @@ import Member from '../components/Member.astro';
 			<section>
 				<h2>Our Projects</h2>
 				<div>
+					<p class='newProjects'>
+						<strong>New!</strong> Check out our new <a href='/projects'>Projects</a> page!
+					</p>
+
+					<hr />
+
 					<ul>
 						<li><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=3150803241'>Book of Malleus Draconia</a></li>
 						<li><a href='https://codeberg.org/basil/tomb'>Tomb</a></li>
@@ -99,5 +105,9 @@ import Member from '../components/Member.astro';
 		display: block;
 		margin: auto;
 		margin-top: 48px;
+	}
+
+	.newProjects {
+		margin: 8px;
 	}
 </style>

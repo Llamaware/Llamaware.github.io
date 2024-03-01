@@ -29,10 +29,11 @@ const { title } = Astro.props;
 		<h2 class='subheading'>"Weaving magical software for the information age."</h2>
 
 		<nav>
-			<a href='/mods'><Icon icon='package' /> TCoAaL Mods</a>
-			<a href='https://github.com/Llamaware'><Icon icon='script_code' /> GitHub</a>
-			<a href='https://discord.gg/SKtgz9KvzE'><Icon icon='connect' /> Discord</a>
-			<a href='mailto:llam@llamawa.re'><Icon icon='email' /> E-Mail</a>
+			<a href='/mods'><Icon icon='package' />TCoAaL Mods</a>
+			<a href='/projects'><Icon icon='drive_go' />Projects</a>
+			<a href='https://github.com/Llamaware'><Icon icon='script_code' />GitHub</a>
+			<a href='https://discord.gg/SKtgz9KvzE'><Icon icon='connect' />Discord</a>
+			<a href='mailto:llam@llamawa.re'><Icon icon='email' />E-Mail</a>
 		</nav>
 	
 		<slot />
@@ -153,5 +154,10 @@ const { title } = Astro.props;
 
 	a[href] {
 		color: var(--text);
+	}
+
+	hr {
+		border: 0;
+		border-bottom: 1px solid var(--accent);
 	}
 </style>
