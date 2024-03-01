@@ -19,8 +19,12 @@ function formatPosition(seconds: number) {
 		+ secs.toString().padStart(2, '0');
 }
 
+function randomStart() {
+	return Math.floor(Math.random() * songList.length);
+}
+
 export default function Player() {
-	const [index, setIndex] = createSignal(0);
+	const [index, setIndex] = createSignal(randomStart());
 	const currentSong = () => songList[index()];
 
 	const [audio, setAudio] = createSignal<HTMLAudioElement|undefined>();
