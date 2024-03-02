@@ -9,9 +9,9 @@ interface Props {
 const { name, authors, id, description, folder, version } = Astro.props.mod;
 ---
 
-<article class='mod'>
+<article class='mod' id={id}>
 	<div>
-		<h1>{name} <span class='version'>{version}</span></h1>
+		<h1><a href={`#${id}`}>{name}</a> <span class='version'>{version}</span></h1>
 		<h2>{authors.join(', ')}</h2>
 
 		<p>{description}</p>
@@ -42,12 +42,19 @@ const { name, authors, id, description, folder, version } = Astro.props.mod;
 		max-width: 500px;
 		width: 100%;
 
+		&:target { outline: 4px solid #0088d2; }
+
 		h1, h2 {
 			margin: 0;
 		}
 		
 		h1 {
 			font-size: 1.25rem;
+			
+			a {
+				text-decoration: none;
+				&:hover { text-decoration: underline; }
+			}
 		}
 
 		h2 {
