@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+
+const { name, authors, links } = Astro.props.project.data;
+const { Content } = await project.render();
+---
+
+<article>
+	<h2>{name}</h3>
+	<h3>Authors</h3>
+	<ul>
+		{authors.map(name => (
+			<li>{name}</li>
+		))}
+	</ul>
+
+	<h3>Links</h3>
+	<ul>
+		{links.map(([text, url]) => (
+			<li>
+				<a href={url}>{text}</a>
+			</li>
+		))}
+	</ul>
+
+	<Content />
+</article>
+
+<style>
+	h2 {
+		margin: 12px 0;
+		font-size: 1.25rem;
+	}
+	h3 {
+		margin: 0;
+		font-size: 1rem;
+	}
+	ul {
+		margin: 8px 0;
+	}
+</style>

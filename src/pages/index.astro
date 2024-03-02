@@ -24,7 +24,6 @@ import Member from '../components/Member.astro';
 						<li><Member name='OneHalf' image='alife.gif' href='https://github.com/KawaiiFiveO' /></li>
 						<li><Member name='Basil' image='basil.gif' href='https://basil.cafe' /></li>
 						<li><Member name='Thefonze7' image='fonze.webp' href='https://codeberg.org/Thefonze7' /></li>
-						<li><Member name='iikare' href='https://github.com/iikare' /></li>
 						<li>Rph</li>
 						<li><Member name='wonderfullymemorable' href='https://codeberg.org/succinctclinical' /></li>
 					</ul>
@@ -34,13 +33,18 @@ import Member from '../components/Member.astro';
 			<section>
 				<h2>Our Projects</h2>
 				<div>
+					<p class='newProjects'>
+						<strong>New!</strong> Check out our new <a href='/projects'>Projects</a> page!
+					</p>
+
+					<hr />
+
 					<ul>
 						<li><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=3150803241'>Book of Malleus Draconia</a></li>
 						<li><a href='https://codeberg.org/basil/tomb'>Tomb</a></li>
 						<li><a href='https://codeberg.org/basil/grimoire'>Grimoire</a></li>
 						<li><a href='https://codeberg.org/basil/coffin-wiki'>TCoAaL Modding Wiki</a></li>
 						<li><a href='https://github.com/Llamaware/LlamaToolkit'>LlamaToolkit 2.0</a></li>
-						<li><a href='https://github.com/Llamaware/IelmenDecryptor'>IelmenDecryptor</a></li>
 						<li><a href='/mods'>TCoAaL Mod Depository</a></li>
 						<li><a href='/TCAL-Personality/test.html'>TCAL Personality Test</a></li>
 						<li><a href='https://github.com/Llamaware/Llamaware.github.io'>This site</a></li>
@@ -101,5 +105,9 @@ import Member from '../components/Member.astro';
 		display: block;
 		margin: auto;
 		margin-top: 48px;
+	}
+
+	.newProjects {
+		margin: 8px;
 	}
 </style>
