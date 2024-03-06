@@ -32,7 +32,9 @@ Here is an example:
 - `source` - Optional parameter (but recommended). A link to the source code of the mod.
 - `sha256` The sha256 hash of the ZIP file. The hash of the retrieved file in `url` must match this.
 
-If your mod contains generative AI assets in any form, whether that be GitHub Copilot, LLM-generated text, AI generated art or music, or anything else, include the optional `tags` parameter, and add the `gen-ai` tag:
+
+If your mod contains the output of generative AI, defined here as LLM-generated text, artwork/images, music/sounds, or assets *other than code*, include the optional `tags` parameter, and add the `gen-ai` tag (If your mod contains LLM-generated code, simply let us know in your PR):
+
 ```jsonc
 {
 	"tags": ["gen-ai"],
