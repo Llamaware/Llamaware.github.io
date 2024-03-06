@@ -9,6 +9,18 @@ const projects = defineCollection({
 	}),
 });
 
+const mods = defineCollection({
+	type: 'data',
+	schema: z.object({
+		tags: z.enum(['gen-ai']).array().optional(),
+		lastUpdate: z.string().datetime(),
+		url: z.string().url(),
+		source: z.string().url().optional(),
+		sha256: z.string().length(64)
+	})
+});
+
 export const collections = {
-	projects
+	projects,
+	mods
 };

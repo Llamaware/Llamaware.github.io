@@ -1,12 +1,15 @@
 ---
+import type { ModData } from '../lib/getMod';
 import type { Mod } from '../lib/getMods';
+
 import Link from './Link.astro';
+import Tag from './Tag.astro';
 
 interface Props {
-	mod: Mod;
+	mod: ModData;
 }
 
-const { name, authors, id, description, folder, version } = Astro.props.mod;
+const { data: { tags, source }, modJson: { name, authors, id, description, version } } = Astro.props.mod;
 ---
 
 <article class='mod' id={id}>
@@ -14,17 +17,16 @@ const { name, authors, id, description, folder, version } = Astro.props.mod;
 		<h1><a href={`#${id}`}>{name}</a> <span class='version'>{version}</span></h1>
 		<h2>{authors.join(', ')}</h2>
 
+		{tags && tags.map(tag => <Tag tag={tag} />)}
+
 		<p>{description}</p>
 	</div>
 
 	<div class='links'>
 		<Link href={`/mod/${id}.zip?${Date.now()}`} icon='disk'>Download</Link>
-		<Link
-			href={`https://github.com/Llamaware/Llamaware.github.io/tree/main/mods/${folder}`}
-			icon='eye'
-		>
+		{source && <Link href={source} icon='eye'>
 			View Source
-		</Link>
+		</Link>}
 	</div>
 </article>
 

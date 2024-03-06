@@ -1,0 +1,44 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+	tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+{() => {
+	switch (tag) {
+		case 'gen-ai':
+			return <span class='tag gen-ai'>
+				<Icon icon='information'} />
+				<span>
+					Contains <a href='https://en.wikipedia.org/wiki/Generative_artificial_intelligence'>generative AI</a> assets
+				</span>
+			</span>;
+		default:
+			throw new Error(`Unsupported tag: ${tag}`);
+	}
+}}
+
+<style lang='scss'>
+	.gen-ai {
+		color: black;
+		background-color: rgb(153, 211, 252);
+	}
+
+	.tag {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		width: max-content;
+		padding: 4px 6px;
+		
+		font-size: 0.875rem;
+		text-decoration: none;
+
+		a { color: inherit; }
+	}
+</style>

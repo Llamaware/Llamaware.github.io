@@ -1,5 +1,7 @@
-import { readFileSync, readdirSync } from 'node:fs';
-import path from 'node:path';
+import type { ModData } from './getMod';
+
+import { getCollection } from 'astro:content';
+import getMod from './getMod';
 
 export type Mod = {
 	folder: string;
@@ -11,25 +13,8 @@ export type Mod = {
 	version: string;
 };
 
-export default function getMods(): Mod[] {
-	const folders = readdirSync('mods');
+export default async function getMods(): Promise<ModData[]> {
+	const mods = await getCollection('mods');
 
-	const mods: Mod[] = [];
-
-	for (const folder of folders) {
-		const confPath = path.join('mods', folder, 'mod.json');
-		const conf = JSON.parse(readFileSync(confPath, 'utf8'));
-
-		mods.push({
-			folder,
-
-			id: conf.id,
-			name: conf.name,
-			authors: conf.authors,
-			description: conf.description,
-			version: conf.version
-		});
-	}
-
-	return mods;
+	return await Promise.all(mods.map(mod => getMod(mod.id)));
 }

@@ -10,16 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.5",
+    "@astrojs/check": "^0.5.6",
     "@astrojs/solid-js": "^4.0.1",
-    "astro": "^4.4.3",
-    "glob": "^10.3.10",
+    "astro": "^4.4.12",
     "jszip": "^3.10.1",
-    "solid-js": "^1.8.15",
-    "typescript": "^5.3.3"
+    "solid-js": "^1.8.15"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "typescript": "^5.3.3"
   }
 }

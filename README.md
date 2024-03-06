@@ -10,3 +10,7 @@
 ## License
 
 All code is licensed as per the `LICENSE` file, but all files in `public/` are property of their copyright holders.
+
+## Add a Mod
+
+Want to add a mod? Make a pull request to the `src/content/mods.json` file.
