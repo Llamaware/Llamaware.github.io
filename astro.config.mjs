@@ -10,4 +10,7 @@ export default defineConfig({
 	},
 	compressHTML: false,
 	integrations: [solidJs()],
+	experimental: {
+		contentCollectionCache: true
+	}
 });

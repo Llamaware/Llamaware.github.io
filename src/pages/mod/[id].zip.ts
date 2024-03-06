@@ -1,29 +1,16 @@
 import type { APIRoute } from 'astro';
+import type { ModKey } from '../../lib/getMod';
 
-import path from 'node:path';
-import { readFileSync, statSync } from 'node:fs';
-import { glob } from 'glob';
+import { getCollection } from 'astro:content';
 import JSZip from 'jszip';
-import getMods from '../../lib/getMods';
+import getMod from '../../lib/getMod';
+import cache from '../../lib/cache';
 
-export const GET: APIRoute = async ({ props }) => {
-	const modFolder = `./mods/${props.folder}`;
+export const GET: APIRoute = async ({ params }) => {
+	const mod = await getMod(params.id as ModKey);
 
-	const entriesRaw = await glob(`**`, {
-		cwd: modFolder,
-	});
-	const entries = entriesRaw.filter(e => e !== '.');
-
-	const zip = new JSZip();
-
-	for (const entry of entries) {
-		const entryPath = path.join(modFolder, entry);
-		const stat = statSync(entryPath);
-
-		if (stat.isDirectory()) zip.folder(entry)
-		else if (stat.isFile()) zip.file(entry, readFileSync(entryPath));
-		else throw new Error(`"${entryPath}" is neither a folder nor a path.`);
-	}
+	const origZipData = await cache.url(mod.data.url, mod.data.sha256);
+	const zip = await JSZip.loadAsync(origZipData);
 
 	const data = await zip.generateAsync({
 		type: 'arraybuffer',
@@ -36,9 +23,10 @@ export const GET: APIRoute = async ({ props }) => {
 	return new Response(data);
 };
 
-export function getStaticPaths() {
-	return getMods().map(mod => ({
-		params: { id: mod.id },
-		props: { folder: mod.folder }
+export async function getStaticPaths() {
+	const collection = await getCollection('mods');
+
+	return collection.map(mod => ({
+		params: { id: mod.id }
 	}));
 }
