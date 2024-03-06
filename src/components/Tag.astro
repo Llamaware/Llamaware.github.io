@@ -12,7 +12,7 @@ const { tag } = Astro.props;
 	switch (tag) {
 		case 'gen-ai':
 			return <span class='tag gen-ai'>
-				<Icon icon='exclamation'} />
+				<Icon icon='information'} />
 				<span>
 					Contains <a href='https://en.wikipedia.org/wiki/Generative_artificial_intelligence'>generative AI</a> assets
 				</span>
@@ -24,8 +24,8 @@ const { tag } = Astro.props;
 
 <style lang='scss'>
 	.gen-ai {
-		color: white;
-		background-color: rgb(181, 10, 10);
+		color: black;
+		background-color: rgb(153, 211, 252);
 	}
 
 	.tag {
