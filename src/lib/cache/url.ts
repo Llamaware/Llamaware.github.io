@@ -8,7 +8,7 @@ export default async function url(url: string, expectedHash: string): Promise<Ar
 	const data = await res.arrayBuffer();
 	const hash = sha256(data);
 
-	if (expectedHash !== hash)
+	if (expectedHash.toLowerCase() !== hash)
 		throw new Error(`Hash mismatch when fetching "${url}": Expected hash ${expectedHash} but got hash ${hash}`);
 
 	cache.write(expectedHash, data);
