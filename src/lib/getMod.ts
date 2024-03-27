@@ -16,8 +16,8 @@ type ModJSON = {
 };
 
 export type ModData = {
-	data: ModSchema,
-	modJson: ModJSON
+	data: ModSchema & { id: ModKey; };
+	modJson: ModJSON;
 };
 
 export default async function getMod(modId: ModKey): Promise<ModData> {
@@ -31,7 +31,10 @@ export default async function getMod(modId: ModKey): Promise<ModData> {
 	const modJson: ModJSON = JSON.parse(await modJsonData.async('text'));
 
 	return {
-		data: mod.data,
+		data: {
+			...mod.data,
+			id: modId
+		},
 		modJson,
 	};
 }

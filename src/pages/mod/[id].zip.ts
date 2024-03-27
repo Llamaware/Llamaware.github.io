@@ -1,13 +1,12 @@
 import type { APIRoute } from 'astro';
-import type { ModKey } from '../../lib/getMod';
 
-import { getCollection } from 'astro:content';
 import JSZip from 'jszip';
-import getMod from '../../lib/getMod';
 import cache from '../../lib/cache';
+import getMod from '../../lib/getMod';
+import getMods from '../../lib/getMods';
 
-export const GET: APIRoute = async ({ params }) => {
-	const mod = await getMod(params.id as ModKey);
+export const GET: APIRoute = async ({ props }) => {
+	const mod = await getMod(props.id);
 
 	const origZipData = await cache.url(mod.data.url, mod.data.sha256);
 	const zip = await JSZip.loadAsync(origZipData);
@@ -24,9 +23,10 @@ export const GET: APIRoute = async ({ params }) => {
 };
 
 export async function getStaticPaths() {
-	const collection = await getCollection('mods');
+	const mods = await getMods();
 
-	return collection.map(mod => ({
-		params: { id: mod.id }
+	return mods.map(mod => ({
+		params: { id: mod.modJson.id },
+		props: { id: mod.data.id }
 	}));
 }
