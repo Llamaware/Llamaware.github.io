@@ -1,4 +1,4 @@
-import cache from '.';
+import cache, { l } from '.';
 import { sha256 } from '../sha256';
 
 export default async function url(url: string, expectedHash: string): Promise<ArrayBuffer> {
@@ -9,7 +9,7 @@ export default async function url(url: string, expectedHash: string): Promise<Ar
 	const hash = sha256(data);
 
 	if (expectedHash.toLowerCase() !== hash)
-		throw new Error(`Hash mismatch when fetching "${url}": Expected hash ${expectedHash} but got hash ${hash}`);
+		throw new Error(`Hash mismatch when fetching "${url}": Expected hash ${l(expectedHash)} but got hash ${hash}`);
 
 	cache.write(expectedHash, data);
 
