@@ -3,7 +3,9 @@ import Mod from '../components/Mod.astro';
 import Layout from '../layouts/Layout.astro';
 import getMods from '../lib/getMods';
 
-const mods = await getMods();
+const mods =
+	(await getMods())
+	.sort((a, b) => Date.parse(b.data.lastUpdate) - Date.parse(a.data.lastUpdate));
 ---
 
 <Layout title='Llamaware Mod Depository'>
