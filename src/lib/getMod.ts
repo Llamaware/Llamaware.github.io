@@ -12,6 +12,11 @@ type ModJSON = {
 	name: string;
 	authors: string[];
 	description: string;
+	dependencies?: {
+		game: string;
+		spec: string;
+		mods?: Record<string, string>;
+	};
 	version: string;
 };
 

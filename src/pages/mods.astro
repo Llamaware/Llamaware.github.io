@@ -6,6 +6,10 @@ import getMods from '../lib/getMods';
 const mods =
 	(await getMods())
 	.sort((a, b) => Date.parse(b.data.lastUpdate) - Date.parse(a.data.lastUpdate));
+
+for (const mod of mods) {
+	if (!mod.modJson.dependencies) console.error(`[${mod.modJson.name}] Missing "dependencies" key.`);
+}
 ---
 
 <Layout title='Llamaware Mod Depository'>
