@@ -38,7 +38,7 @@ const { title } = Astro.props;
 	
 		<slot />
 
-		<Player client:only />
+		<Player client:only='solid-js' />
 	</body>
 </html>
 
@@ -150,6 +150,21 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+		font-size: 0.875rem;
+	}
+
+	/* Inline code elements */
+	:not(pre) > code {
+		padding: 1px 3px;
+		background: #452107;
+		color: #f8d7a1;
+		box-shadow: 0 3px 6px -3px #65060478;
+	}
+
+	/* Code blocks */
+	.astro-code {
+		padding: 8px;
+		box-shadow: 0 3px 6px -3px #6506049e;
 	}
 
 	a[href] {
@@ -159,5 +174,9 @@ const { title } = Astro.props;
 	hr {
 		border: 0;
 		border-bottom: 1px solid var(--accent);
+	}
+
+	:is(main, section) > :is(h1, h2, h3, h4, h5, h6) {
+		text-align: center;
 	}
 </style>
