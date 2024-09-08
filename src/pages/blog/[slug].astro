@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { fmtDate } from '../../lib/util';
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('blog');
+	return blogEntries.map(entry => ({
+		params: { slug: entry.slug }, props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const date = new Date(entry.data.date);
+---
+
+<Layout title={`${entry.data.title} | Llamaware Blog`}>
+	<main>
+		<header>
+			<h1>{entry.data.title}</h1>
+			<p>Written by: {entry.data.authors.join(', ')}</p>
+			<time datetime={
+				`${
+					date.getFullYear()
+				}-${
+					(date.getMonth()+1).toString().padStart(2, '0')
+				}-${
+					date.getDate().toString().padStart(2, '0')
+				}`
+			}>{fmtDate(date)}</time>
+		</header>
+
+		<Content />
+	</main>
+</Layout>
+
+<style is:global lang='scss'>
+	header {
+		padding-bottom: 24px;
+		margin-bottom: 24px;
+		border-bottom: 1px solid var(--accent);
+
+		h1, p {
+			margin: 8px 0;
+		}
+	}
+
+	main :is(h1, h2, h3, h4, h5, h6) {
+		text-align: left;
+	}
+</style>

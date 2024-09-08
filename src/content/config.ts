@@ -20,7 +20,17 @@ const mods = defineCollection({
 	})
 });
 
+const blog = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(),
+		authors: z.array(z.string()),
+		date: z.string().datetime(),
+	})
+});
+
 export const collections = {
 	projects,
-	mods
+	mods,
+	blog,
 };

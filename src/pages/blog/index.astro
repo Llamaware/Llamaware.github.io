@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { fmtDate } from '../../lib/util';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date));
+---
+
+<Layout title='Llamaware Mod Depository'>
+	<main>
+		{posts.length === 0
+			? <p>We have yet to write any sick soliloquies, please pop by later.</p>
+			: <ul>
+				{posts.map(post =>
+					<li>
+						<a href={`/blog/${post.slug}`}>
+							{post.data.title} ({fmtDate(new Date(post.data.date))})
+						</a>
+					</li>
+				)}
+			</ul>
+		}
+	</main>
+</Layout>

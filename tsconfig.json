@@ -3,6 +3,7 @@
 	"exclude": ["mods/", "dist/", ".cache/"],
 	"compilerOptions": {
 		"jsx": "preserve",
-		"jsxImportSource": "solid-js"
+		"jsxImportSource": "solid-js",
+		"esModuleInterop": true
 	}
 }
