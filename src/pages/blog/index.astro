@@ -9,6 +9,8 @@ const posts = (await getCollection('blog'))
 
 <Layout title='Llamaware Mod Depository'>
 	<main>
+		<a href='/blog/rss.xml'>RSS</a>
+
 		{posts.length === 0
 			? <p>We have yet to write any sick soliloquies, please pop by later.</p>
 			: <ul>
