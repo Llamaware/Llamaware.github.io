@@ -1,7 +1,7 @@
 {
    "tags": ["gen-ai"],
-   "lastUpdate": "2024-09-04T14:22:27Z",
-   "url": "https://codeberg.org/canopy/sidedishes/releases/download/v.0.5.4/sidedishes.zip",
+   "lastUpdate": "2024-10-14T18:47:23Z",
+   "url": "https://codeberg.org/canopy/sidedishes/releases/download/v.0.5.5/sidedishes.zip",
    "source": "https://codeberg.org/canopy/sidedishes",
-   "sha256": "ca3540f4f4386b002c79129b62ff302647df10b8a3537fe4ddc4084c1db0f4d2"
+   "sha256": "0cc41f2618b47b6d4497052de90896b6c20919d982ca5f1c0cb2f25babde319c"
 }
