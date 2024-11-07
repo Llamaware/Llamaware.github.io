@@ -17,6 +17,7 @@
     "astro": "^4.15.4",
     "jszip": "^3.10.1",
     "markdown-it": "^14.1.0",
+    "node-fetch": "^3.3.2",
     "sanitize-html": "^2.13.0",
     "solid-js": "^1.8.22"
   },
