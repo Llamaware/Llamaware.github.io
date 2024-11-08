@@ -60,31 +60,54 @@ import Member from '../components/Member.astro';
 </Layout>
 
 <style lang='scss'>
-	$asideWidth: 256px;
+    $asideWidth: 256px;
+    
+    .container {
+    	display: flex;
+    	flex-direction: column;
+    	min-height: 100vh;
+    }
+    
+    .main {
+    	display: flex;
+    	flex-direction: row;
+    	gap: 32px;
+    	flex: 1;
+    
+    	> main {
+    		flex: 1;
+    	}
+    }
+    
+    aside {
+    	width: $asideWidth;
+    }
+    
+    .footer {
+    	margin-top: 32px;
+    	text-align: center;
+    	padding: 16px;
+    	background-color: var(--bg);
+    	border-top: 1px solid var(--accent);
+    }
+    
 
-	.main {
-		display: flex;
-		flex-direction: row;
-		gap: 32px;
-
-		> main { flex: 1; }
-	}
-
-	aside { width: $asideWidth; }
-
-	@media (max-width: 800px) {
-		.main { flex-direction: column; }
-
-		aside {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 8px;
-
-			width: unset;
-
-			> * { width: $asideWidth; }
-		}
-	}
+    @media (max-width: 800px) {
+    	.main {
+    		flex-direction: column;
+    	}
+    
+    	aside {
+    		display: flex;
+    		flex-wrap: wrap;
+    		gap: 8px;
+    		width: unset;
+    
+    		> * {
+    			width: $asideWidth;
+    		}
+    	}
+    }
 
 	section {
 		h2 {
