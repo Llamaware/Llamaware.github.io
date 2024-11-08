@@ -13,6 +13,7 @@ const songList = [
 	{ title: 'Takeshi Abo - Gate of Steiner - Piano', file: '/music/Gate of Steiner - Piano Version.mp3' },
 	{ title: 'Al Lowe - Leisure Suit Larry 2 Theme (MT-32)', file: '/music/Leisure Suit Larry 2 Roland MT-32.mp3' },
 	{ title: 'Outworld - The End (Instrumental)', file: '/music/Outworld - The End (Instrumental).mp3' },
+	{ title: 'JR Mando - Asgore', file: '/music/JR Mando - Tales From the Under - 04 Asgore.mp3' },
 ];
 
 function formatPosition(seconds: number) {
