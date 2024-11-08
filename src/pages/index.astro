@@ -53,61 +53,38 @@ import Member from '../components/Member.astro';
 				</div>
 			</section>
 		</aside>
-		<footer class='footer'>
-			<p>Llamaware (c) Copyright 1999<br>The only Coffin modding Web 2.0 platform<br>Follow us on <a href='/gruyere'>Gruyere</a>!</p>
-		</footer>
 	</div>
+	<footer class='footer'>
+		<p>Llamaware (c) Copyright 1999<br>The only Coffin modding Web 2.0 platform<br>Follow us on <a href='/gruyere'>Gruyere</a>!</p>
+	</footer>
 </Layout>
 
 <style lang='scss'>
-    $asideWidth: 256px;
-    
-    .container {
-    	display: flex;
-    	flex-direction: column;
-    	min-height: 100vh;
-    }
-    
-    .main {
-    	display: flex;
-    	flex-direction: row;
-    	gap: 32px;
-    	flex: 1;
-    
-    	> main {
-    		flex: 1;
-    	}
-    }
-    
-    aside {
-    	width: $asideWidth;
-    }
-    
-    .footer {
-    	margin-top: 32px;
-    	text-align: center;
-    	padding: 16px;
-    	background-color: var(--bg);
-    	border-top: 1px solid var(--accent);
-    }
-    
+	$asideWidth: 256px;
 
-    @media (max-width: 800px) {
-    	.main {
-    		flex-direction: column;
-    	}
-    
-    	aside {
-    		display: flex;
-    		flex-wrap: wrap;
-    		gap: 8px;
-    		width: unset;
-    
-    		> * {
-    			width: $asideWidth;
-    		}
-    	}
-    }
+	.main {
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+
+		> main { flex: 1; }
+	}
+
+	aside { width: $asideWidth; }
+
+	@media (max-width: 800px) {
+		.main { flex-direction: column; }
+
+		aside {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+
+			width: unset;
+
+			> * { width: $asideWidth; }
+		}
+	}
 
 	section {
 		h2 {
@@ -137,4 +114,5 @@ import Member from '../components/Member.astro';
 	.newProjects {
 		margin: 8px;
 	}
+
 </style>
