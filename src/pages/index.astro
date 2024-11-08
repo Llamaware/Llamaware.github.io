@@ -26,7 +26,6 @@ import Member from '../components/Member.astro';
 					<ul>
 						<li><Member name='OneHalf' image='alife.gif' href='https://onehalf.dev' /></li>
 						<li><Member name='Basil' image='basil.gif' href='https://basil.cafe' /></li>
-						<li><Member name='Thefonze7' image='fonze.webp' href='https://codeberg.org/Thefonze7' /></li>
 						<li>Rph</li>
 					</ul>
 				</div>
@@ -45,6 +44,7 @@ import Member from '../components/Member.astro';
 						<li><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=3150803241'>Book of Malleus Draconia</a></li>
 						<li><a href='https://codeberg.org/basil/tomb'>Tomb</a></li>
 						<li><a href='https://codeberg.org/basil/grimoire'>Grimoire</a></li>
+						<li><a href='https://github.com/Llamaware/LlamaLoader'>LlamaLoader</a></li>
 						<li><a href='https://github.com/Llamaware/LlamaToolkit'>LlamaToolkit 2.0</a></li>
 						<li><a href='https://codeberg.org/basil/coffin-wiki'>TCoAaL Modding Wiki</a></li>
 						<li><a href='/mods'>TCoAaL Mod Depository</a></li>
@@ -55,6 +55,9 @@ import Member from '../components/Member.astro';
 			</section>
 		</aside>
 	</div>
+	<footer class='footer'>
+		<p>Llamaware (c) Copyright 1999<br>The only Coffin modding Web 2.0 platform<br>Follow us on <a href='/gruyere'>Gruyere</a>!</p>
+	</footer>
 </Layout>
 
 <style lang='scss'>
@@ -64,6 +67,7 @@ import Member from '../components/Member.astro';
 		display: flex;
 		flex-direction: row;
 		gap: 32px;
+		min-height: calc(90vh);
 
 		> main { flex: 1; }
 	}
@@ -112,4 +116,13 @@ import Member from '../components/Member.astro';
 	.newProjects {
 		margin: 8px;
 	}
+	
+	.footer {
+    text-align: center;
+    width: 100%;
+    font-size: 0.8rem;
+    opacity: 0.75;
+	}
+
+
 </style>
