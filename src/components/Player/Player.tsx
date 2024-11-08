@@ -8,6 +8,11 @@ const songList = [
 	{ title: 'Heartmeat of Carillon - Hoffipolkka', file: '/music/Heartmeat of Carillon - Hoffipolkka.mp3' },
 	{ title: 'Kris Hatlelid - The Duel - Test Drive II', file: '/music/Kris Hatlelid - The Duel - Test Drive II.mp3' },
 	{ title: 'ZUN - Bad Apple!!', file: '/music/ZUN - Bad Apple!!.mp3' },
+	{ title: 'Ferry Corsten - Made of Love', file: '/music/Ferry Corsten - Made Of Love.mp3' },
+	{ title: 'Masakazu Sugimori - GHOST TRICK', file: '/music/GHOST TRICK.mp3' },
+	{ title: 'Takeshi Abo - Gate of Steiner - Piano', file: '/music/Gate of Steiner - Piano Version.mp3' },
+	{ title: 'Al Lowe - Leisure Suit Larry 2 Theme (MT-32)', file: '/music/Leisure Suit Larry 2 Roland MT-32.mp3' },
+	{ title: 'Outworld - The End (Instrumental)', file: '/music/Outworld - The End (Instrumental).mp3' },
 ];
 
 function formatPosition(seconds: number) {
