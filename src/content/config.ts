@@ -12,11 +12,12 @@ const projects = defineCollection({
 const mods = defineCollection({
 	type: 'data',
 	schema: z.object({
-		tags: z.enum(['gen-ai']).array().optional(),
+		tags: z.enum(['gen-ai', 'content', 'dev', 'qol', 'lib', 'mature']).array().optional(),
 		lastUpdate: z.string().datetime(),
 		url: z.string().url(),
 		source: z.string().url().optional(),
-		sha256: z.string().length(64)
+		sha256: z.string().length(64),
+		icon: z.string().url().optional(),
 	})
 });
 
