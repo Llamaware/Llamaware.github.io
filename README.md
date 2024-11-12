@@ -45,9 +45,7 @@ Tags are a quick way to organise mods into various categories. **They are option
 ```
 
 ## Repository API
-- Llamaware provides a single JSON file with all the mods in the repository.
-- For each entry, the repository json contains data from the [mod entry in the repository](https://github.com/Llamaware/Llamaware.github.io/tree/main/src/content/mods) and the [mod.json spec](https://coffin-wiki.basil.cafe/modding/mod-json).
-- Simply make a GET request to `llamawa.re/repo.json` to get the repository data.
+Llamaware provides a single JSON file with all the mods in the repository. For each entry, the repository json contains data from the [mod entry in the repository](https://github.com/Llamaware/Llamaware.github.io/tree/main/src/content/mods) and the [mod.json spec](https://coffin-wiki.basil.cafe/modding/mod-json). Simply make a GET request to `llamawa.re/repo.json` to get the repository data.
 
 ## Sources
 
