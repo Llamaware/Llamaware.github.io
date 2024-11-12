@@ -16,8 +16,7 @@ const mods = defineCollection({
 		lastUpdate: z.string().datetime(),
 		url: z.string().url(),
 		source: z.string().url().optional(),
-		sha256: z.string().length(64),
-		icon: z.string().url().optional(),
+		sha256: z.string().length(64)
 	})
 });
 

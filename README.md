@@ -16,8 +16,7 @@ The Llamaware website offers a convenient repository for TCOAAL mods in the [Tom
 	"lastUpdate": "2024-01-01T00:00:00Z",
 	"url": "https://example.com/path/to/your/mod.zip",
 	"source": "https://example.com/path/to/the/source/code",
-	"sha256": "The sha256 hash of your zip file",
-	"icon": "https://example.com/path/to/myicon.webp"
+	"sha256": "The sha256 hash of your zip file"
 }
 ```
 
@@ -27,7 +26,6 @@ The Llamaware website offers a convenient repository for TCOAAL mods in the [Tom
 - `url` - The URL to your ZIP file, which will be automatically downloaded and a copy will be hosted on the website.
 - `source (optional)` - A link to the source code of the mod. Ideally, hosted on either [Github](https://www.github.com) or [Codeberg](https://www.codeberg.org).
 - `sha256` - The sha256 hash of the ZIP file. The hash of the retrieved file in `url` must match this. (You can get this by running `Get-FileHash <path>` on Windows or `sha256sum <path>` on Linux.)
-- `icon (optional)` - A URL to an image to be displayed for your mod where applicable. Please keep it a multiple of 256x256, small, and webp/png/jpeg.
 
 <br/>**Tagging your mod:**<br/>
 Tags are a quick way to organise mods into various categories. **They are optional, except for gen-ai. (if applicable)** Here are some tags that you can apply:
@@ -45,9 +43,11 @@ Tags are a quick way to organise mods into various categories. **They are option
 	// The rest of the JSON
 }
 ```
-<br/>**And to use the repository as an API:**<br>
-- Make a GET request to `llamawa.re/repo.json`
-- The `repo.json` response contains each mod in the above format, but with the individual mod's information JSON inlined into a `modJson` field (which has extra properties).
+
+## Repository API
+- Llamaware provides a single JSON file with all the mods in the repository.
+- For each entry, the repository json contains data from the [mod entry in the repository](https://github.com/Llamaware/Llamaware.github.io/tree/main/src/content/mods) and the [mod.json spec](https://coffin-wiki.basil.cafe/modding/mod-json).
+- Simply make a GET request to `llamawa.re/repo.json` to get the repository data.
 
 ## Sources
 
