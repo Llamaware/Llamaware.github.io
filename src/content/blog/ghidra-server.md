@@ -76,7 +76,6 @@ ghidra.repositories.dir=/opt/ghidra-repos
 - Change these parameters so that users can specify a username when connecting:
 
 ```
-ghidra.repositories.dir=/opt/ghidra-repos
 wrapper.app.parameter.2=-u
 wrapper.app.parameter.3=${ghidra.repositories.dir}
 ```
@@ -111,10 +110,12 @@ You're all done! When you connect to the server with your username, you will be 
 
 ### Conclusion
 
-Your Ghidra server should now be up and running! The service will start automatically on every boot. Good luck and have fun decompiling with friends!
+Your Ghidra server should now be up and running! The service will start automatically on every boot. Good luck, and have fun decompiling with friends!
 
 Hopefully, you found this guide helpful, since the included documentation with Ghidra is rather lackluster. It can be found at `ghidra/server/svrREADME.html`.
 
 You can find more info on how to use your new Ghidra server [here](https://byte.how/posts/collaborative-reverse-engineering/).
+
+---
 
 The information in this article was originally from Chris Eagle, Kara Nance - *The Ghidra Book - The Definitive Guide* (2020). It has been modified and updated.
