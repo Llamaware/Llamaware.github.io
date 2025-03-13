@@ -45,10 +45,11 @@ sudo chown ghidrasrv.ghidrasrv /opt/ghidra-repos
 5. Download Ghidra, unzip it, and move it to the server root directory. The release link is [here](https://github.com/NationalSecurityAgency/ghidra/releases).
 
 ```
-wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip -O ghidra.zip
+wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip -O /tmp/ghidra.zip
 mkdir /tmp/ghidra
 cd /tmp/ghidra
-unzip ghidra.zip
+unzip /tmp/ghidra.zip
+sudo mv ghidra_* /opt/ghidrasrv
 cd /tmp
 rm -f ghidra.zip
 rmdir ghidra
