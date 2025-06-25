@@ -2,7 +2,7 @@
 name: Theia
 authors: ['OneHalf', 'notoverthere', 'kleineluka']
 links: [
-	['Info', '/Theia'],
+	['Info', 'https://llamawa.re/Theia'],
 	['Source', 'https://github.com/Llamaware/Theia'],
 ]
 ---
